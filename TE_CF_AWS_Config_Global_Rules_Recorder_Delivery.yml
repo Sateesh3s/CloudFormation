@@ -50,8 +50,8 @@ Resources:
       Bucket: !Ref TEAWSCreateConfigBucket
     DependsOn:
       - TEAWSCreateConfigBucket
-  TEAWSConfigConfigurationRecorder:
-    Type: 'AWS::Config::ConfigurationRecorder'
+  TEAWSConfigConfigurationRecorder11:
+    Type: 'AWS::Config::ConfigurationRecorder1'
     Properties:
       Name: default
       RecordingGroup:
@@ -109,7 +109,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: REQUIRED_TAGS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRequiredResourceTagsGroup2:
@@ -137,7 +137,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: REQUIRED_TAGS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder11
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRequiredResourceTagsS3:
@@ -157,7 +157,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: REQUIRED_TAGS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder11
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRequiredResourceTagsIAMUser:
@@ -176,7 +176,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: REQUIRED_TAGS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder11
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSS3PublicRead:
@@ -196,7 +196,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: S3_BUCKET_PUBLIC_READ_PROHIBITED
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSIAMPasswordPolicy:
@@ -219,7 +219,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: IAM_PASSWORD_POLICY
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSS3PublicWrite:
@@ -238,7 +238,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: S3_BUCKET_PUBLIC_WRITE_PROHIBITED
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSCloudtrailEnabled:
@@ -254,7 +254,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: CLOUD_TRAIL_ENABLED
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRDSSnapshotsPublic:
@@ -272,7 +272,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: RDS_SNAPSHOTS_PUBLIC_PROHIBITED
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSSGRestrictedPortsforAnySource:
@@ -291,7 +291,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: VPC_SG_OPEN_ONLY_TO_AUTHORIZED_PORTS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSEC2PublicIP:
@@ -310,7 +310,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: EC2_INSTANCE_NO_PUBLIC_IP
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRDSPubliclyAccessible:
@@ -328,7 +328,7 @@ Resources:
         Owner: AWS
         SourceIdentifier: RDS_INSTANCE_PUBLIC_ACCESS_CHECK
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
   TEGlobalAWSRequiredBackupTags:
@@ -350,6 +350,6 @@ Resources:
         Owner: AWS
         SourceIdentifier: REQUIRED_TAGS
     DependsOn:
-      - TEAWSConfigConfigurationRecorder
+      - TEAWSConfigConfigurationRecorder1
       - TETEAWSConfigServiceRole
       - TEAWSConfigDeliveryChannel
